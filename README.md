@@ -136,10 +136,3 @@ Contributions are welcome! If you'd like to add features or fix bugs, feel free 
 
 ----------
 
-## Contact
-
-If you have any questions or suggestions, feel free to reach out at [[YourEmail@example.com](mailto:YourEmail@example.com)].
-
-```
-
----
