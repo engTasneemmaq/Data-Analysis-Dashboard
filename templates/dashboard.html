@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .summary {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Analysis Dashboard</h1>
+    <div class="summary">
+        <p><strong>Total Sales:</strong> ${{ total_sales }}</p>
+        <p><strong>Total Products Sold:</strong> {{ total_products_sold }}</p>
+        <p><strong>Unique Products:</strong> {{ unique_products }}</p>
+    </div>
+    <form method="GET" action="/">
+        <label for="product">Filter by Product:</label>
+        <select name="product" id="product">
+            <option value="all">All Products</option>
+            {% for product in unique_products_list %}
+            <option value="{{ product }}">{{ product }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+    <h2>Sales by Product</h2>
+    <img src="{{ plot_url }}" alt="Sales Plot">
+</body>
+</html>
